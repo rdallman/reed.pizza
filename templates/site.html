@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css" rel="stylesheet" >
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
+
+  <style>
+    html {
+      background: url(/assets/wild_oliva.png);
+    }
+
+    body {
+      padding-top: 20px;
+      font-size: 16px;
+      color: #FFFFFF;
+      font-family: "Open Sans", serif;
+      background: transparent;
+    }
+
+    .navbar-brand {
+      font-family:"Abel", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+    }
+
+    h1 {
+      font-family:"Abel", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 40px;
+    }
+
+    .navbar {
+      margin-bottom: 40px;
+    }
+
+    .margin-base-vertical {
+      margin: 40px 0;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+          data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href='#'>Reed Allman</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Timeline</a></li>
+          <li><a href="#">Grub</a><li>
+          <li><a href="#">Hire Me?</a></li>
+          <!-- dropdown? -->
+          <li><a href="#">Find Me</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--
+    <h1>{{.Title}}</h1>
+
+    <div>{{printf "%s" .Body}}</div>
+    -->
+  </div>
+</body>
+</html>
