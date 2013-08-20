@@ -34,10 +34,15 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func hireHandler(w http.ResponseWriter, r *http.Request) {
+  p := &Page{Title: "hire"}
+  renderTemplate(w, "hire", p)
+}
+
+func resumeHandler(w http.ResponseWriter, r *http.Request) {
   md, _:= ioutil.ReadFile("assets/resume.md")
   t := template.HTML(blackfriday.MarkdownCommon(md))
   p := &Page{Title: "resume", Body: t}
-  renderTemplate(w, "hire", p)
+  renderTemplate(w, "resume", p)
 }
 
 
@@ -76,6 +81,7 @@ func main() {
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc("/", indexHandler)
   http.HandleFunc("/hire", hireHandler)
+  http.HandleFunc("/hire/resume", resumeHandler)
   //http.HandleFunc("/view/", makeHandler(viewHandler))
   // localhost: 5000
   err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)

@@ -1,11 +1,13 @@
 # Reed Allman
-<rdallman10@gmail.com> · <http://rdallman.github.io>
+
+<rdallman10@gmail.com> · <http://rdallman.herokuapp.com>
+
 -------------------------------------------------------------------
 
 ### Expertise
 
-  * Writing clean, readable, idiomatic code that uses the adopted conventions of its community.
-  * Building robust, fast and beautiful [mobile] applications, specifically for Android and the web
+  * Writing clean, readable, reusable, and idiomatic code.
+  * Building robust, fast and beautiful [mobile] applications.
   * Crafting business plans, products and roadmaps from scratch.
   * Developing products with the user and business in mind. And shipping them. 
 

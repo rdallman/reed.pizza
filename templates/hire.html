@@ -6,7 +6,6 @@
     body {
       padding-top: 20px;
       font-size: 16px;
-      color: #FFFFFF;
       font-family: "Open Sans", serif;
       background: transparent;
     }
@@ -17,17 +16,69 @@
       font-size: 40px;
     }
 
-    .panel {
-      background-color: rgba(255, 255, 255, 0.9);
+    .row {
+      .img-responsive {
+        max-height=30px;
+        max-width=30px;
+      }
+    }
+
+    .center {
+      padding: 20px;
+      text-align:center;
+    }
+
+    .pad {
+      padding: 20px;
+    }
+
+    .btn {
+      padding: 15px 50px;
+      font-size: 20px;
+    }
+
+    .resume {
     }
 
   </style>
 </head>
 <body>
   <div class="container">
-      <div class="resume">
-        {{.Body}}
+    <div class="row">
+      <div class="center col-xs-2"></div>
+      <div class="center col-xs-2">
+          <img src="assets/android.png" alt="android" class="img-responsive">
+        </div>
+      <div class="center col-xs-2">
+          <img src="assets/gopher.png" alt="golang" class="img-responsive">
+        </div>
+      <div class="center col-xs-2">
+          <img src="assets/ruby.png" alt="ruby" class="img-responsive">
+        </div>
+      <div class="center col-xs-2">
+          <img src="assets/vim.png" alt="vim" class="img-responsive">
       </div>
+      <div class="center col-xs-2"></div>
+    </div>
+    <div class="row">
+      <div class="center col-sm-6">
+        <p>
+          Just another software engineer laid off from Initech. I'm currently attending
+          Auburn University and working as a research assistant, but I am seeking
+          full time employment beginning May 2014. I like the above listed tools,
+          but I am always looking to learn new things. I just want to build stuff, really.
+          Cool stuff. I'm always working on something, so if you want that to be one
+          of your things then click the Hire Me button and let's see if we can
+          figure something out. Let me own it and I will not disappoint.
+        </p>
+      </div>
+      <div class="center col-sm-6">
+        <a class="btn btn-lg btn-success" href="#">Hire Me</a>
+        <div class="pad">
+          <a class="btn btn-lg btn-primary" href="/hire/resume">Resume</a>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
