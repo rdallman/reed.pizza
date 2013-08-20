@@ -16,13 +16,12 @@
 
   <style>
     html {
-      background: url(/assets/wild_oliva.png);
+      background: url(/assets/wild_oliva.png) center center fixed;
     }
 
     body {
       padding-top: 20px;
       font-size: 16px;
-      color: #FFFFFF;
       font-family: "Open Sans", serif;
       background: transparent;
     }
@@ -33,19 +32,17 @@
       font-size: 20px;
     }
 
-    h1 {
-      font-family:"Abel", Arial, sans-serif;
-      font-weight: 400;
-      font-size: 40px;
-    }
-
     .navbar {
       margin-bottom: 40px;
+      border-bottom: 0;
     }
 
-    .margin-base-vertical {
-      margin: 40px 0;
+    @media (min-width: 768px) {
+      .container {
+        max-width: 730px;
+      }
     }
+
 
   </style>
 
@@ -61,15 +58,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href='#'>Reed Allman</a>
+        <a class="navbar-brand" href='/'>Reed Allman</a>
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Timeline</a></li>
           <li><a href="#">Grub</a><li>
-          <li><a href="#">Hire Me?</a></li>
+          <li><a href="#">Projects</a><li>
+          <li><a href="/hire">Hire Me?</a></li>
           <!-- dropdown? -->
-          <li><a href="#">Find Me</a></li>
         </ul>
       </div>
     </nav>

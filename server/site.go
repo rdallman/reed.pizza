@@ -7,39 +7,47 @@ import (
   "io/ioutil"
   "net/http"
   //"regexp"
+  "github.com/russross/blackfriday"
   "os"
 )
 
 type Page struct {
   Title string
-  Body []byte
+  Body template.HTML
 }
 
 
-func loadPage(title string) (*Page, error) {
-  filename := title + ".txt"
-  body, err := ioutil.ReadFile(filename)
-  if err != nil {
-    return nil, err
-  }
-  return &Page{Title: title, Body: body}, nil
-}
+
+//func loadPage(title string) (*Page, error) {
+  //filename := title + ".txt"
+  //body, err := ioutil.ReadFile(filename)
+  //if err != nil {
+    //return nil, err
+  //}
+  //return &Page{Title: title, Body: body}, nil
+//}
+
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
   p := &Page{Title: "index"}
   renderTemplate(w, "index", p)
 }
 
+func hireHandler(w http.ResponseWriter, r *http.Request) {
+  md, _:= ioutil.ReadFile("assets/resume.md")
+  t := template.HTML(blackfriday.MarkdownCommon(md))
+  p := &Page{Title: "resume", Body: t}
+  renderTemplate(w, "hire", p)
+}
+
 
 var templates = template.Must(template.ParseGlob("templates/*"))
+//var templates = template.Must(template.ParseFiles("templates/index.html", "templates/site.html"))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
   //idiomatic this
-  err := templates.ExecuteTemplate(w, "site.html", p)
-  if err != nil {
-    http.Error(w, err.Error(), http.StatusInternalServerError)
-  }
-  err = templates.ExecuteTemplate(w, tmpl+".html", p)
+  templates.ExecuteTemplate(w, "site.html", p)
+  err := templates.ExecuteTemplate(w, tmpl+".html", p)
   if err != nil {
     http.Error(w, err.Error(), http.StatusInternalServerError)
   }
@@ -67,6 +75,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
 func main() {
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc("/", indexHandler)
+  http.HandleFunc("/hire", hireHandler)
   //http.HandleFunc("/view/", makeHandler(viewHandler))
   // localhost: 5000
   err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
