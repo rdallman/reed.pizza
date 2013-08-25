@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="text/javascript" src="assets/js/handlebars.js"></script>
+
   <style>
 
     .carousel .item {
@@ -16,109 +19,36 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="row featurette">
-      <div class="col-sm-7 col-xs-12">
-        <h2 class="featurette-heading">grocerygod <span class="text-muted">Android app</span></h2>
-        <p class="lead">No idea what to eat? No problem. grocerygod is a meal generating app to help
-          people plan healthy meals for up to a week. This started as a school project and then turned business. 
-          Have an Android? Check it out: 
-        </p>
-        <p>
-          <a href="https://play.google.com/store/apps/details?id=com.bet.grocerygod">
-            <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
-          </a>
-        </p>
-      </div>
-      <div class="col-sm-5 col-xs-12">
-        <div id="myCarousel" class="carousel slide">
-        <!-- Indicators 
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-          </ol>
-          -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/icon.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/home.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/nutrition.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/meals.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/shopping.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/meal.png" alt="First slide">
+  <div id="menu-placeholder"></div>
+    <script id="menu-template" type="text/x-handlebars-template">
+      {{#each project}}
+        {{#if @index}}
+          <hr class="featurette-divider">
+        {{/if}}
+        <div class="row featurette">
+          <div class="col-sm-7 col-xs-12">
+            <h2 class="featurette-heading">{{name}}  <span class="text-muted">{{platform}}</span></h2>
+            <p class="lead">{{desc}}</p>
+            {{#each links}}
+              <a href={{url}}><img src={{img}}>
+            {{/each}}
+          </div>
+            <div class="col-sm-5 col-xs-12">
+              <div id="myCarousel{{@index}}" class="carousel slide">
+                <div class="carousel-inner">
+                  {{#each this.pictures}}
+                    <div class="item {{#unless @index}}active{{/unless}}">
+                      <img class="featuretter-image img-responsive" src={{this}} alt="something{{@index}}">
+                    </div>
+                  {{/each}}
+                </div>
+                <a class="left carousel-control" href="#myCarousel{{@index}}" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#myCarousel{{@index}}" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
             </div>
           </div>
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-sm-5 col-xs-12">
-        <div id="myCarousel" class="carousel slide">
-        <!-- Indicators 
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-          </ol>
-          -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/icon.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/home.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/nutrition.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/meals.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/shopping.png" alt="First slide">
-            </div>
-            <div class="item">
-              <img class="featuretter-image img-responsive" src="assets/grocerygod/meal.png" alt="First slide">
-            </div>
-          </div>
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-      </div>
-      <div class="col-sm-7 col-xs-12">
-        <h2 class="featurette-heading">grocerygod <span class="text-muted">Android app</span></h2>
-        <p class="lead">No idea what to eat? No problem. grocerygod is a meal generating app to help
-          people plan healthy meals for up to a week. This started as a school project and then turned business. 
-          Have an Android? Check it out: 
-        </p>
-        <p>
-          <a href="https://play.google.com/store/apps/details?id=com.bet.grocerygod">
-            <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-</body>
+      {{/each}}
+</script>
+<script type="text/javascript" src="assets/js/projects.js" /></script>
+   </body>
+ </html>

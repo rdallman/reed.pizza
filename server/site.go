@@ -1,7 +1,6 @@
 package main
 
 import (
-  "fmt"
   "log"
   "html/template"
   "io/ioutil"
@@ -35,13 +34,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
   renderTemplate(w, "index", p)
 }
 
-func hireHandler(w http.ResponseWriter, r *http.Request) {
-  html, _:= ioutil.ReadFile("templates/hire.html")
-  t := template.HTML(html)
-  p := &Page{Title: "hire", Body: t}
-  renderTemplate(w, "hire", p)
-}
-
 func resumeHandler(w http.ResponseWriter, r *http.Request) {
   md, _:= ioutil.ReadFile("assets/resume.md")
   t := template.HTML(blackfriday.MarkdownCommon(md))
@@ -49,29 +41,11 @@ func resumeHandler(w http.ResponseWriter, r *http.Request) {
   renderTemplate(w, "resume", p)
 }
 
-func projectsHandler(w http.ResponseWriter, r *http.Request) {
-  html, _:= ioutil.ReadFile("templates/projects.html")
-  t := template.HTML(html)
-  p := &Page{Title: "projects", Body: t}
-  renderTemplate(w, "projects", p)
-}
-
-func shoeHandler(w http.ResponseWriter, r *http.Request) {
-  t, _ := template.ParseFiles("templates/shoes.html")
-  t.ExecuteTemplate(w, "shoes.html", &Page{})
-  //html, _:= ioutil.ReadFile("templates/shoes.html")
-  //t := template.HTML(html)
-  //p := &Page{Title: "shoes", Body: t}
-  //renderTemplate(w, "shoes", p)
-}
-
 //var templates = template.Must(template.ParseGlob("templates/*.html"))
 var templates = template.Must(template.ParseFiles("templates/site.html"))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
-  //idiomatic this
   err := templates.ExecuteTemplate(w, "site.html", p)
-  //err := templates.ExecuteTemplate(w, tmpl+".html", p)
   if err != nil {
     http.Error(w, err.Error(), http.StatusInternalServerError)
   }
@@ -84,30 +58,28 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
 //func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.HandlerFunc {
   //return func(w http.ResponseWriter, r *http.Request) {
     //title := r.URL.Path[lenPath:]
-    //if !titleValidator.MatchString(title) {
-      //http.NotFound(w, r)
-      //return
-    //}
+    ////if !titleValidator.MatchString(title) {
+      ////http.NotFound(w, r)
+      ////return
+    ////}
     //fn(w, r, title)
   //}
 //}
 
-func serveSingle(pattern string, filename string) {
-    http.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
-        http.ServeFile(w, r, filename)
-    })
-}
-
-func hello(w http.ResponseWriter, req *http.Request) {
-  fmt.Fprintln(w, "hello, world!")
+func handle(page string) (string, http.HandlerFunc) {
+  return "/"+page, func(w http.ResponseWriter, r *http.Request) {
+    html, _:= ioutil.ReadFile("templates/"+page+".html")
+    t := template.HTML(html)
+    p := &Page{Title: page, Body: t}
+    renderTemplate(w, page, p)
+  }
 }
 
 func main() {
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc("/", indexHandler)
-  http.HandleFunc("/projects", projectsHandler)
-  //serveSingle("/projects", "./templates/projects.html")
-  http.HandleFunc("/hire", hireHandler)
+  http.HandleFunc(handle("projects"))
+  http.HandleFunc(handle("hire"))
   http.HandleFunc("/hire/resume", resumeHandler)
   // localhost: 5000
   err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
