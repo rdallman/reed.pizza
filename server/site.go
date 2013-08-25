@@ -29,12 +29,16 @@ type Page struct {
 
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-  p := &Page{Title: "index"}
+  html, _:= ioutil.ReadFile("templates/index.html")
+  t := template.HTML(html)
+  p := &Page{Title: "index", Body: t}
   renderTemplate(w, "index", p)
 }
 
 func hireHandler(w http.ResponseWriter, r *http.Request) {
-  p := &Page{Title: "hire"}
+  html, _:= ioutil.ReadFile("templates/hire.html")
+  t := template.HTML(html)
+  p := &Page{Title: "hire", Body: t}
   renderTemplate(w, "hire", p)
 }
 
@@ -45,14 +49,29 @@ func resumeHandler(w http.ResponseWriter, r *http.Request) {
   renderTemplate(w, "resume", p)
 }
 
+func projectsHandler(w http.ResponseWriter, r *http.Request) {
+  html, _:= ioutil.ReadFile("templates/projects.html")
+  t := template.HTML(html)
+  p := &Page{Title: "projects", Body: t}
+  renderTemplate(w, "projects", p)
+}
 
-var templates = template.Must(template.ParseGlob("templates/*"))
-//var templates = template.Must(template.ParseFiles("templates/index.html", "templates/site.html"))
+func shoeHandler(w http.ResponseWriter, r *http.Request) {
+  t, _ := template.ParseFiles("templates/shoes.html")
+  t.ExecuteTemplate(w, "shoes.html", &Page{})
+  //html, _:= ioutil.ReadFile("templates/shoes.html")
+  //t := template.HTML(html)
+  //p := &Page{Title: "shoes", Body: t}
+  //renderTemplate(w, "shoes", p)
+}
+
+//var templates = template.Must(template.ParseGlob("templates/*.html"))
+var templates = template.Must(template.ParseFiles("templates/site.html"))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
   //idiomatic this
-  templates.ExecuteTemplate(w, "site.html", p)
-  err := templates.ExecuteTemplate(w, tmpl+".html", p)
+  err := templates.ExecuteTemplate(w, "site.html", p)
+  //err := templates.ExecuteTemplate(w, tmpl+".html", p)
   if err != nil {
     http.Error(w, err.Error(), http.StatusInternalServerError)
   }
@@ -73,6 +92,12 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
   //}
 //}
 
+func serveSingle(pattern string, filename string) {
+    http.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
+        http.ServeFile(w, r, filename)
+    })
+}
+
 func hello(w http.ResponseWriter, req *http.Request) {
   fmt.Fprintln(w, "hello, world!")
 }
@@ -80,9 +105,10 @@ func hello(w http.ResponseWriter, req *http.Request) {
 func main() {
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc("/", indexHandler)
+  http.HandleFunc("/projects", projectsHandler)
+  //serveSingle("/projects", "./templates/projects.html")
   http.HandleFunc("/hire", hireHandler)
   http.HandleFunc("/hire/resume", resumeHandler)
-  //http.HandleFunc("/view/", makeHandler(viewHandler))
   // localhost: 5000
   err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
   if err != nil {

@@ -28,23 +28,23 @@
 
 **May 2013-present, Undergraduate Research Assistant, Auburn University**
 
-  *  I was responsible for developing the vim plugin for the open source C refactoring tool, [OpenRefactory]. It’s written in pure VimL.
-  *  Vim is now the recommended client for OpenRefactory.
-  *  Implemented an open-source JSON parser / strinfigier / pretty printer in VimL.
+  *  I developed the vim plugin for the open source C refactoring tool, [OpenRefactory]. It’s written in pure VimL
+  *  Vim is now the recommended client for OpenRefactory
+  *  Implemented an open-source JSON parser / strinfigier / pretty printer in VimL
 
 **Jan 2013-present, Co-Founder, grocerygod**
 
-  *  From school project to business: prototyped, developed and shipped [grocerygod] in one semester, currently available for Android on Google Play. 150+ downloads and growing. Even got an A+.
-  *  I am heavily responsible for the UI, UX, development, architecture, optimization, and roadmap. Holo themed, tablet support, multithreaded.
-  *  Used various open source libraries to provide features and Android 2.2+ compatibility.
+  *  From school project to business: prototyped, developed and shipped [grocerygod] in one semester
+  *  Currently available for Android on Google Play. 150+ downloads and growing. Even got an A+
+  *  I had a heavy hand in the UI, UX, development, architecture, optimization, and roadmap
+  *  grocerygod is Holo themed, multithreaded and supports Android 2.2+ and tablets
 
 **August 2012- May 2013, Lead Android Developer, Verge Pipe Media**
 
-  *  I was responsible for the prototype, design, development and deployment of Android applications from the ground up.
-  *  Released [Get Charitable], which has 1000+ downloads on the Google Play Store. Facebook API and Android 2.2+ compatibility.
-  *  Trained and oversaw a small team of developers. Turned whiteboards into masterpieces.
-  *  Used Ruby on Rails for rewriting an application back end. Became familiar with TDD and Heroku.
-
+  *  I was responsible for the prototype, design, development and deployment of Android applications from the ground up
+  *  Released [Get Charitable], which has 1000+ downloads on the Google Play Store. Facebook API and Android 2.2+ compatibility
+  *  Trained and oversaw a small team of developers. Learned git merge and turned whiteboards into masterpieces
+  *  Used Ruby on Rails for rewriting an application back end. Became familiar with TDD and Heroku
 
 
 [OpenRefactory]:http://openrefactory.org/
