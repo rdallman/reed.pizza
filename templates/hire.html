@@ -3,29 +3,15 @@
 <head>
   <style>
 
-    body {
-      padding-top: 20px;
-      font-size: 16px;
-      font-family: "Open Sans", serif;
-      background: transparent;
-    }
-
-    h1 {
-      font-family:"Abel", Arial, sans-serif;
-      font-weight: 400;
-      font-size: 40px;
-    }
-
     .row {
       .img-responsive {
-        max-height=30px;
-        max-width=30px;
+        max-height=10px;
       }
     }
 
     .center {
       padding: 20px;
-      text-align:center;
+      text-align: center;
     }
 
     .pad {
@@ -43,43 +29,47 @@
   </style>
 </head>
 <body>
-  <div class="container">
     <div class="alert alert-warning fade in">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <strong>Currently Busy.</strong> Drop me a line, I'll be available soon!
     </div>
     <div class="row">
-      <div class="center col-xs-3">
+      <div class="center col-xs-1"></div>
+      <div class="center col-xs-2">
           <img src="assets/dev/android.png" alt="android" class="img-responsive">
         </div>
-      <div class="center col-xs-3">
+      <div class="center col-xs-2">
           <img src="assets/dev/gopher.png" alt="golang" class="img-responsive">
         </div>
-      <div class="center col-xs-3">
+      <div class="center col-xs-2">
           <img src="assets/dev/ruby.png" alt="ruby" class="img-responsive">
         </div>
-      <div class="center col-xs-3">
+      <div class="center col-xs-2">
+        <img src="assets/dev/rails.png" alt="rails" class="img-responsive">
+      </div>
+      <div class="center col-xs-2">
           <img src="assets/dev/vim.png" alt="vim" class="img-responsive">
       </div>
+      <div class="center col-xs-1"></div>
     </div>
     <div class="row">
-      <div class="center col-sm-6">
+      <div class="col-sm-6">
         <p>
           Just another software engineer laid off from Initech. I like
           building cool stuff with cool tools and sacrificing my youth to do
           so. If you need something groundbreaking built or if you just like to keep a
           modern-day George Costanza around, I'm your man. You can see what
-          I've done on the <a href='/projects'>projects</a> page or check out
+          I've done on the <a href='/projects'>projects</a> page, browse my
+          code on <a href='https://github.com/rdallman'>github</a> or check out
           my <a href='/hire/resume'>resume</a> for more about yours truly.
         </p>
       </div>
       <div class="center col-sm-6">
-        <a class="btn btn-lg btn-warning" href="#">Hire Me</a>
+        <a class="btn btn-lg btn-warning" href="#"><strong>Hire Me</strong></a>
         <div class="pad">
-          <a class="btn btn-lg btn-primary" href="/hire/resume">Resume</a>
+          <a class="btn btn-lg btn-primary" href="/hire/resume"><strong>Resume</strong></a>
         </div>
       </div>
     </div>
-  </div>
 </body>
 </html>

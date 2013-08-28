@@ -16,9 +16,11 @@
       height: 300px;
     }
 
+
   </style>
 </head>
 <body>
+<div class="container">
   <div id="menu-placeholder"></div>
     <script id="menu-template" type="text/x-handlebars-template">
       {{#each project}}
@@ -27,8 +29,8 @@
         {{/if}}
         <div class="row featurette">
           <div class="col-sm-7 col-xs-12">
-            <h2 class="featurette-heading">{{name}}  <span class="text-muted">{{platform}}</span></h2>
-            <p class="lead">{{desc}}</p>
+            <h2 class="featurette-heading">{{name}}  <br><span class="text-muted">{{platform}}</span></h2>
+            <p class="">{{desc}}</p>
             {{#each links}}
               <a href={{url}}><img src={{img}}>
             {{/each}}
@@ -49,6 +51,7 @@
           </div>
       {{/each}}
 </script>
+</div>
 <script type="text/javascript" src="assets/js/projects.js" /></script>
    </body>
  </html>

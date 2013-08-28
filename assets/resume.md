@@ -1,6 +1,6 @@
 # Reed Allman
 
-<rdallman10@gmail.com> · <http://rdallman.herokuapp.com>
+<rdallman10@gmail.com> · [rdallman.herokuapp.com](http://rdallman.herokuapp.com)
 
 -------------------------------------------------------------------
 
@@ -9,12 +9,12 @@
   * Writing clean, readable, reusable, and idiomatic code.
   * Building robust, fast and beautiful [mobile] applications.
   * Crafting business plans, products and roadmaps from scratch.
-  * Developing products with the user and business in mind. And shipping them. 
+  * Developing products with the user and business in mind. And shipping them.
 
 ### Programming Skills
 
   * Primary: Java
-  * Proficient: C++, C, Ruby, VimL, x86 Assembly
+  * Proficient: C++, C, Ruby, VimL
   * Frameworks: Rails, Android
   * Miscellaneous: git, Heroku
 
@@ -41,10 +41,9 @@
 
 **August 2012- May 2013, Lead Android Developer, Verge Pipe Media**
 
-  *  I was responsible for the prototype, design, development and deployment of Android applications from the ground up
-  *  Released [Get Charitable], which has 1000+ downloads on the Google Play Store. Facebook API and Android 2.2+ compatibility
+  *  Prototyped, designed, developed and deployed Android applications
   *  Trained and oversaw a small team of developers. Learned git merge and turned whiteboards into masterpieces
-  *  Used Ruby on Rails for rewriting an application back end. Became familiar with TDD and Heroku
+  *  Rewrote a back end in Ruby on Rails. Became familiar with TDD and Heroku
 
 
 [OpenRefactory]:http://openrefactory.org/
