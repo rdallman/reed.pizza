@@ -13,8 +13,7 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
   <!-- Handlebars -->
   <script type="text/javascript" src="assets/js/handlebars.js"></script>
-
-
+  <!-- purrty fonts -->
   <link href="http://fonts.googleapis.com/css?family=Raleway:100,400,500" rel="stylesheet" />
 
 
@@ -62,6 +61,12 @@
     .content {
       padding-left: 15px;
       padding-right: 15px;
+    }
+
+    @media print {
+      .navbar {
+        display: none;
+      }
     }
 
     @media (min-width: 768px) {
