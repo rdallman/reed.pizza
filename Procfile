@@ -1,1 +1,1 @@
-web: worldwidereed
+web: go run site.go
