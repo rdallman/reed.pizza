@@ -3,14 +3,12 @@
 <head>
   <style>
 
-    .row {
-      .img-responsive {
-        max-height=10px;
-      }
+    .img-responsive {
+      min-height: 50px;
+      min-width: 50px;
     }
 
     .center {
-      padding: 20px;
       text-align: center;
     }
 
@@ -18,12 +16,13 @@
       padding: 20px;
     }
 
+    .top-pad {
+      padding: 40px 0px;
+    }
+
     .btn {
       padding: 15px 50px;
       font-size: 20px;
-    }
-
-    .resume {
     }
 
   </style>
@@ -31,40 +30,25 @@
 <body>
     <div class="alert alert-warning fade in">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <strong>Currently Busy.</strong> Drop me a line, I'll be available soon!
+      <strong>{{.Busy}}</strong> {{.BusyString}}
     </div>
     <div class="row">
-      <div class="center col-xs-1"></div>
-      <div class="center col-xs-2">
-          <img src="assets/dev/android.png" alt="android" class="img-responsive">
+      <div class="col-sm-1"></div>
+      <ul>
+      {{ range .Pictures }}
+        <div class="center col-xs-2 ">
+          <img src={{.}} class="img-responsive">
         </div>
-      <div class="center col-xs-2">
-          <img src="assets/dev/gopher.png" alt="golang" class="img-responsive">
-        </div>
-      <div class="center col-xs-2">
-          <img src="assets/dev/ruby.png" alt="ruby" class="img-responsive">
-        </div>
-      <div class="center col-xs-2">
-        <img src="assets/dev/rails.png" alt="rails" class="img-responsive">
-      </div>
-      <div class="center col-xs-2">
-          <img src="assets/dev/vim.png" alt="vim" class="img-responsive">
-      </div>
-      <div class="center col-xs-1"></div>
-    </div>
+      {{ end }}
+    </ul>
+  </div>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="pad col-sm-6">
         <p>
-          Just another software engineer laid off from Initech. I like
-          building cool stuff with cool tools and sacrificing my youth to do
-          so. If you need something groundbreaking built or if you just like to keep a
-          modern-day George Costanza around, I'm your man. You can see what
-          I've done on the <a href='/projects'>projects</a> page, browse my
-          code on <a href='https://github.com/rdallman'>github</a> or check out
-          my <a href='/hire/resume'>resume</a> for more about yours truly.
+          {{ md .Body }}
         </p>
       </div>
-      <div class="center col-sm-6">
+      <div class="center top-pad col-sm-6">
         <a class="btn btn-lg btn-warning" href="mailto:rdallman10@gmail.com"><strong>Hire Me</strong></a>
         <div class="pad">
           <a class="btn btn-lg btn-primary" href="/hire/resume"><strong>Resume</strong></a>

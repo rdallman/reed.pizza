@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="assets/js/handlebars.js"></script>
 
   <style>
 
@@ -21,37 +20,37 @@
 </head>
 <body>
 <div class="container">
-  <div id="menu-placeholder"></div>
-    <script id="menu-template" type="text/x-handlebars-template">
-      {{#each project}}
-        {{#if @index}}
+      <ul>
+      {{ range $index, $val := . }}
+        {{ if $index }}
           <hr class="featurette-divider">
-        {{/if}}
+        {{ end }}
         <div class="row featurette">
           <div class="col-sm-7 col-xs-12">
-            <h2 class="featurette-heading">{{name}}  <br><span class="text-muted">{{platform}}</span></h2>
-            <p class="">{{desc}}</p>
-            {{#each links}}
-              <a href={{url}}><img src={{img}}>
-            {{/each}}
+            <h2 class="featurette-heading">{{.Name}}  <br><span class="text-muted">{{.Platform}}</span></h2>
+            <p class="">{{ .Summary }}</p>
+            <p>
+            {{ range .Links }}
+              <a href={{.Url}}><img src={{.Img}}>
+            {{ end }}
+            </p>
           </div>
             <div class="col-sm-5 col-xs-12">
-              <div id="myCarousel{{@index}}" class="carousel slide">
+              <div id="myCarousel{{$index}}" class="carousel slide">
                 <div class="carousel-inner">
-                  {{#each this.pictures}}
-                    <div class="item {{#unless @index}}active{{/unless}}">
-                      <img class="featuretter-image img-responsive" src={{this}} alt="something{{@index}}">
-                    </div>
-                  {{/each}}
+                  {{ range $i, $val := .Pictures}}
+                  <div class="item {{if not $i}}active{{end}} ">
+                    <img class="featuretter-image img-responsive" src={{ . }} alt="something{{$i}}">
+                  </div>
+                  {{end}}
                 </div>
-                <a class="left carousel-control" href="#myCarousel{{@index}}" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                <a class="right carousel-control" href="#myCarousel{{@index}}" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="left carousel-control" href="#myCarousel{{$index}}" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#myCarousel{{$index}}" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
               </div>
             </div>
           </div>
-      {{/each}}
-</script>
-</div>
-<script type="text/javascript" src="assets/js/projects.js" /></script>
-   </body>
- </html>
+        {{end}}
+        </ul>
+  </div>
+</body>
+</html>

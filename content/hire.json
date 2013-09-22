@@ -1,0 +1,13 @@
+{ 
+  "Busy": "Currently Busy",
+  "BusyString": "Drop me a line, I'll be available soon!",
+  "Pictures": [
+    "assets/dev/android.png",
+    "assets/dev/gopher.png",
+    "assets/dev/ruby.png",
+    "assets/dev/rails.png",
+    "assets/dev/vim.png"
+    ],
+  "Body": 
+    "Just another software engineer laid off from Initech. I like building cool stuff with cool tools and sacrificing my youth to do so. If you need something groundbreaking built or if you just like to keep a modern-day George Costanza around, I'm your man. You can see what I've done on the [projects](/projects) page, browse my code on [github](http://github.com/rdallman) or check out my [resume](/hire/resume) for more about yours truly."
+}
