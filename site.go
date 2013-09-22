@@ -1,6 +1,7 @@
 package main
 
 import (
+  "os"
   "bytes"
   "net/http"
   "html/template"
@@ -122,7 +123,7 @@ func main() {
   http.HandleFunc("/", handleContent())
   // localhost:5000
   go listenForChanges()
-  err := http.ListenAndServe(":5000", nil)
+  err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
   if err != nil {
     log.Fatal("ListenAndServe:", err)
   }
