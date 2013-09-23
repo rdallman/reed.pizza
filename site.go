@@ -122,7 +122,7 @@ func main() {
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc("/", handleContent())
   // localhost:5000
-  go listenForChanges()
+  //go listenForChanges()
   err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
   if err != nil {
     log.Fatal("ListenAndServe:", err)
