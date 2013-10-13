@@ -13,11 +13,13 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
   <!-- purrty fonts -->
   <link href="http://fonts.googleapis.com/css?family=Raleway:100,400,500" rel="stylesheet" />
+  <!-- Font-awesome icons -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
 
 
   <style>
     html {
-      background: url(/assets/wild_oliva.png) center center fixed;
+      background: #184c6f center center fixed;
     }
 
     body {
@@ -38,22 +40,6 @@
     h1, h2 {
       font-family: "Raleway";
       font-weight: 100;
-    }
-
-    .navbar-brand {
-      font-family:"Raleway";
-      font-weight: 100;
-      font-size: 28px;
-    }
-
-    .navbar-real {
-      border-bottom: 0;
-      margin-bottom: 40px;
-    }
-
-    .navbar-fake {
-      background:  url(/assets/wild_oliva.png) center center fixed;
-      border-bottom: 0;
     }
 
     .content {
@@ -85,53 +71,14 @@
       .container {
         max-width: 730px;
       }
-      .content {
-        padding-left: 0px;
-        padding-right: 0px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar-real {
-        margin-bottom: 0px;
-      }
-      .navbar-fake {
-        display: none;
-      }
     }
 
   </style>
 
 </head>
 <body>
-    <nav class="navbar navbar-fake navbar-fixed-bottom">
-    </nav>
-    <nav class="navbar navbar-real navbar-fixed-bottom navbar-inverse" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href='/'>rd.allman</a>
-        </div>
-      <div class="container">
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/projects">Projects</a><li>
-            <li><a href="/hire">Hire Me</a></li>
-            <!-- dropdown? -->
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  <div class="container">
     <div class="content">
       {{.Body}}
     </div>
-  </div>
 </body>
 </html>

@@ -7,7 +7,7 @@
 ### Expertise
 
   * Writing clean, reusable, and idiomatic code to solve problems.
-  * Building robust, fast and beautiful applications for the web and mobile.
+  * Building robust, fast, secure and beautiful applications for the web and mobile.
   * Crafting businesses and products from scratch. Release early, release often.
 
 ### Programming Skills
@@ -19,7 +19,7 @@
 
 ### Education
 
-**B.S., Software Engineering, Auburn University, 2014.**
+**B.S., Software Engineering, Auburn University, [May] 2014.**
 
   *  Minors in Finance, Business-Engineering-Technology ([B-E-T])
 
@@ -45,6 +45,15 @@
   *  Prototyped, designed, developed and deployed Android applications.
   *  Trained and oversaw a small team of developers. Learned git merge.
   *  Rewrote a back end in Ruby on Rails. Became familiar with TDD and Heroku.
+
+### Contributions
+
+  *  Contributor to the "go.tools" repo, I worked on the Vim plugin for
+     the "go oracle", a static analysis tool for Go code.
+  *  Gave multiple talks on Git and Android development to the Auburn ACM 
+     and Auburn mobile dev groups
+  *  Created a tutorial for an Auburn "Go Bootcamp" that walks through creating
+     a simple http server and personal website in Go
 
 
 [OpenRefactory]:http://openrefactory.org/
