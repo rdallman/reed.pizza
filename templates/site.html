@@ -24,7 +24,6 @@
 
     body {
       color: #ffffff;
-      padding-top: 20px;
       padding-bottom: 100px;
       font-size: 16px;
       font-family: "Raleway";
@@ -42,10 +41,20 @@
       font-weight: 100;
     }
 
-    .content {
-      padding-left: 15px;
-      padding-right: 15px;
+    a {
+      color: #f39c12;
     }
+
+    a:hover, i:hover { 
+      color: #e67e22;
+      text-decoration: none;
+    }
+
+    .back {
+      position: fixed;
+      padding: 15px 15px;
+    }
+
 
     @media print {
       .navbar {
@@ -77,8 +86,9 @@
 
 </head>
 <body>
-    <div class="content">
-      {{.Body}}
-    </div>
+  <a class="back hidden-xs" href="/" ><i class="icon-2x icon-light icon-chevron-sign-left"></i></a>
+  <div class="container">
+    {{.Body}}
+  </div>
 </body>
 </html>
