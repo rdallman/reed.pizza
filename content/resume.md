@@ -1,6 +1,6 @@
 # Reed Allman
 
-<rdallman10@gmail.com> · [rdallman.herokuapp.com]  · [github.com/rdallman]
+<rdallman10@gmail.com> · [rdallman.me]  · [github.com/rdallman]
 
 -------------------------------------------------------------------
 
@@ -60,6 +60,6 @@
 [grocerygod]:https://play.google.com/store/apps/details?id=com.bet.grocerygod
 [B-E-T]:http://www.eng.auburn.edu/research/centers/twc/bet/directors-note.html
 [Get Charitable]:https://play.google.com/store/apps/details?id=com.vergepipemedia.charitable
-[rdallman.herokuapp.com]:http://rdallman.herokuapp.com
+[rdallman.me]:http://www.rdallman.me
 [github.com/rdallman]:http://github.com/rdallman
 
