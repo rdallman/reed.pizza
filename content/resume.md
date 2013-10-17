@@ -28,10 +28,9 @@
 **May 2013-present, Undergraduate Research Assistant, Auburn University**
 
   *  Built the Vim and Sublime Text plugins for [OpenRefactory], an open source C refactoring tool.
-  *  Developed a JSON protocol to interface between the Openrefactory engine and plugins. 
-  *  Wrote a JSON parser and stringifier for VimL.
   *  Funded by Google to work on refactoring Go, with a focus on Go specific refactorings.
-  *  Leveraging the 'go/ast' package to do accurate source code rewriting. 
+  *  Wrote a JSON parser, pretty printer and stringifier for VimL.
+  *  Developed a JSON protocol to interface between the refactoring tools and their plugins.
 
 **Jan 2013-present, Founder, grocerygod**
 
@@ -42,8 +41,8 @@
 
 **August 2012- May 2013, Lead Android Developer, Verge Pipe Media**
 
-  *  Prototyped, designed, developed and deployed Android applications.
-  *  Trained and oversaw a small team of developers. Learned git merge.
+  *  Developed Android applications for this digital media startup in Auburn
+  *  Trained and oversaw a small team of developers.
   *  Rewrote a back end in Ruby on Rails. Became familiar with TDD and Heroku.
 
 ### Contributions
