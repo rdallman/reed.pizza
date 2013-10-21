@@ -117,10 +117,19 @@ func listenForChanges() {
   watcher.Close()
 }
 
+func serveFile(url string, filename string) {
+  http.HandleFunc(url, func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, filename)
+  })
+}
+
 
 func main() {
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc("/", handleContent())
+  serveFile("/favicon.ico", "./favicon.ico")
+  serveFile("/sitemap.xml", "./sitemap.xml")
+  serveFile("/robots.txt", "./robots.txt")
   // localhost:5000
   go listenForChanges()
   err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
