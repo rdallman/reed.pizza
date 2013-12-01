@@ -1,139 +1,137 @@
 package main
 
 import (
-  "os"
-  "bytes"
-  "net/http"
-  "html/template"
-  "log"
-  "io/ioutil"
-  "encoding/json"
-  "path/filepath"
-  "github.com/russross/blackfriday"
-  "github.com/howeyc/fsnotify"
+	"bytes"
+	"encoding/json"
+	"github.com/howeyc/fsnotify"
+	"github.com/russross/blackfriday"
+	"html/template"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+	"path/filepath"
 )
 
 type Page struct {
-  Title string
-  Body template.HTML
+	Title string
+	Body  template.HTML
 }
 
 func Markdown(s string) template.HTML {
-  return template.HTML(blackfriday.MarkdownCommon([]byte(s)))
+	return template.HTML(blackfriday.MarkdownCommon([]byte(s)))
 }
 
-var funcs = template.FuncMap{"md":Markdown}
+var funcs = template.FuncMap{"md": Markdown}
 
-var templates =
-template.Must(template.New("").Funcs(funcs).ParseGlob("templates/*.html"))
+var templates = template.Must(template.New("").Funcs(funcs).ParseGlob("templates/*.html"))
 
 func renderTemplate(w http.ResponseWriter, data interface{}) {
-  err := templates.ExecuteTemplate(w, "site.html", data)
-  if err != nil {
-    http.Error(w, err.Error(), http.StatusInternalServerError)
-  }
+	err := templates.ExecuteTemplate(w, "site.html", data)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
 
-func handleContent() (http.HandlerFunc) {
-  return func(w http.ResponseWriter, r *http.Request) {
-    page := filepath.Base(r.URL.Path)
-    if page == "/" {
-      page = "index"
-    }
-    renderTemplate(w, &Page{Title: page, Body: renderContent(page) })
-  }
+func handleContent() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		page := filepath.Base(r.URL.Path)
+		if page == "/" {
+			page = "index"
+		}
+		renderTemplate(w, &Page{Title: page, Body: renderContent(page)})
+	}
 }
 
 func renderContent(page string) template.HTML {
-  file, _ := filepath.Glob("content/"+page+".*")
-  //idiomatic?
-  if len(file) > 0 {
-    switch(filepath.Ext(file[0])) {
-    case ".md":
-      return renderMarkdown(file[0])
-    case ".json":
-      return renderJSON(file[0])
-    }
-  }
-  return renderHTML(page, new(interface{}))
+	file, _ := filepath.Glob("content/" + page + ".*")
+	//idiomatic?
+	if len(file) > 0 {
+		switch filepath.Ext(file[0]) {
+		case ".md":
+			return renderMarkdown(file[0])
+		case ".json":
+			return renderJSON(file[0])
+		}
+	}
+	return renderHTML(page, new(interface{}))
 }
 
 //TODO return err
 func renderHTML(page string, data interface{}) template.HTML {
-  var buf bytes.Buffer
-  templates.ExecuteTemplate(&buf, page+".html", data)
-  return template.HTML(buf.Bytes())
+	var buf bytes.Buffer
+	templates.ExecuteTemplate(&buf, page+".html", data)
+	return template.HTML(buf.Bytes())
 }
 
 //TODO return err
 func renderJSON(page string) template.HTML {
-  contents, _ := ioutil.ReadFile(page)
+	contents, _ := ioutil.ReadFile(page)
 
-  var data interface{}
-  json.Unmarshal(contents, &data)
+	var data interface{}
+	json.Unmarshal(contents, &data)
 
-  page = filepath.Base(page)
-  page = page[:len(page) - len(filepath.Ext(page))]
+	page = filepath.Base(page)
+	page = page[:len(page)-len(filepath.Ext(page))]
 
-  return renderHTML(page, data)
+	return renderHTML(page, data)
 }
 
 //TODO return err
 func renderMarkdown(page string) template.HTML {
-  md, _ := ioutil.ReadFile(page)
-  return template.HTML(blackfriday.MarkdownCommon(md))
+	md, _ := ioutil.ReadFile(page)
+	return template.HTML(blackfriday.MarkdownCommon(md))
 }
 
 //reload templates on modify
 func listenForChanges() {
-  watcher, err := fsnotify.NewWatcher()
-  if err != nil {
-      log.Fatal(err)
-  }
+	watcher, err := fsnotify.NewWatcher()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-  done := make(chan bool)
+	done := make(chan bool)
 
-  // Process events
-  go func() {
-    for {
-      select {
-      case ev := <-watcher.Event:
-        log.Println("event:", ev)
-        //recompile templates
-        templates = template.Must(template.New("").Funcs(funcs).ParseGlob("templates/*.html"))
-      case err := <-watcher.Error:
-        log.Println("error:", err)
-      }
-    }
-  }()
+	// Process events
+	go func() {
+		for {
+			select {
+			case ev := <-watcher.Event:
+				log.Println("event:", ev)
+				//recompile templates
+				templates = template.Must(template.New("").Funcs(funcs).ParseGlob("templates/*.html"))
+			case err := <-watcher.Error:
+				log.Println("error:", err)
+			}
+		}
+	}()
 
-  err = watcher.Watch("templates/")
-  if err != nil {
-    log.Fatal(err)
-  }
+	err = watcher.Watch("templates/")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-  <-done
+	<-done
 
-  watcher.Close()
+	watcher.Close()
 }
 
 func serveFile(url string, filename string) {
-  http.HandleFunc(url, func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, filename)
-  })
+	http.HandleFunc(url, func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, filename)
+	})
 }
 
-
 func main() {
-  http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
-  http.HandleFunc("/", handleContent())
-  serveFile("/favicon.ico", "./favicon.ico")
-  serveFile("/sitemap.xml", "./sitemap.xml")
-  serveFile("/robots.txt", "./robots.txt")
-  // localhost:5000
-  go listenForChanges()
-  err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
-  if err != nil {
-    log.Fatal("ListenAndServe:", err)
-  }
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
+	http.HandleFunc("/", handleContent())
+	serveFile("/favicon.ico", "./favicon.ico")
+	serveFile("/sitemap.xml", "./sitemap.xml")
+	serveFile("/robots.txt", "./robots.txt")
+	// localhost:5000
+	go listenForChanges()
+	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+	if err != nil {
+		log.Fatal("ListenAndServe:", err)
+	}
 }

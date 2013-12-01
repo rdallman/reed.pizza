@@ -47,12 +47,11 @@
 
 ### Contributions
 
-  *  Contributor to the "go.tools" repo, I worked on the Vim plugin for
-     the "go oracle", a static analysis tool for Go code.
   *  Gave multiple talks on Git and Android development to the Auburn ACM 
-     and Auburn mobile dev groups
+     and Auburn mobile dev groups. [Speakerdeck]
   *  Created a tutorial for an Auburn "Go Bootcamp" that walks through creating
-     a simple http server and personal website in Go
+     a simple http server and personal website in Go.
+     [link](http://github.com/rdallman/gofirst)
 
 
 [OpenRefactory]:http://openrefactory.org/
@@ -61,4 +60,5 @@
 [Get Charitable]:https://play.google.com/store/apps/details?id=com.vergepipemedia.charitable
 [rdallman.me]:http://www.rdallman.me
 [github.com/rdallman]:http://github.com/rdallman
+[Speakerdeck]:https://speakerdeck.com/rdallman
 
