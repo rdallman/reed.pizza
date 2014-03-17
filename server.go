@@ -3,14 +3,15 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/howeyc/fsnotify"
-	"github.com/russross/blackfriday"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/howeyc/fsnotify"
+	"github.com/russross/blackfriday"
 )
 
 type Page struct {
@@ -45,7 +46,8 @@ func handleContent() http.HandlerFunc {
 
 func renderContent(page string) template.HTML {
 	file, _ := filepath.Glob("content/" + page + ".*")
-	//idiomatic?
+
+	//TODO idiomatic?
 	if len(file) > 0 {
 		switch filepath.Ext(file[0]) {
 		case ".md":

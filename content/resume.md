@@ -7,13 +7,13 @@
 ### Expertise
 
   * Writing clean, reusable, and idiomatic code to solve problems.
-  * Building robust, fast, secure and beautiful applications for the web and mobile.
+  * Building simple, fast, secure and beautiful applications for the web and mobile.
   * Crafting businesses and products from scratch. Release early, release often.
 
 ### Programming Skills
 
-  * Primary: Java
-  * Proficient: C, Go, Ruby, Python, VimL
+  * Primary: Go
+  * Proficient: C, Java, Ruby, Python, VimL
   * Frameworks: Rails, Android
   * Toolbox: Vim, Android Studio, Unix, Gradle, Git, Heroku, TDD, SQL, NoSQL
 
@@ -21,21 +21,24 @@
 
 **B.S., Software Engineering, Auburn University, [May] 2014.**
 
-  *  Minors in Finance, Business-Engineering-Technology ([B-E-T])
+  *  Minor in Business-Engineering-Technology ([B-E-T] TL;DR entrepreneurship)
 
-### Experience
+### Work Experience
 
 **May 2013-present, Undergraduate Research Assistant, Auburn University**
 
-  *  Built the Vim and Sublime Text plugins for [OpenRefactory], an open source C refactoring tool.
   *  Funded by Google to work on refactoring Go, with a focus on Go specific refactorings.
+  *  Built a statement level control flow graph for Go source code and used that to do data flow analyses.
+  *  Developed the command line interface for the Go refactoring tool.
+  *  Constructed a testing infrastructure for 4.5M lines of Go code. `go build` them all in under 7 minutes.
+  *  Built the Vim and Sublime Text plugins for [OpenRefactory], an open source C refactoring tool.
   *  Wrote a JSON parser, pretty printer and stringifier for VimL.
   *  Developed a JSON protocol to interface between the refactoring tools and their plugins.
 
 **Jan 2013-present, Founder, grocerygod**
 
   *  From school project to business: developed and shipped [grocerygod] in one semester.
-  *  200+ downloads on Google Play Store. Even got an A+.
+  *  400+ downloads on Google Play Store. Even got an A+. And I can figure out what to eat easily.
   *  Holo themed, multithreaded and supports Android 2.2+ and tablets.
   *  Integrated multiple open source libraries to make my life easier and stay current.
 
