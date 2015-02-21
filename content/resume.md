@@ -33,10 +33,10 @@ I'm building systems for now, but am interested in most other things.
 
 [B-E-T]:http://www.eng.auburn.edu/research/centers/twc/bet/directors-note.html
 [github.com/rdallman]:http://github.com/rdallman
-[godoctor]:http://gorefactor.org/index.html
+[godoctor]:https://github.com/godoctor/godoctor
 [grocerygod]:https://play.google.com/store/apps/details?id=com.bet.grocerygod
 [Iron.io]:https://iron.io
-[OpenRefactory]:http://openrefactory.org/
+[OpenRefactory/C]:http://dl.acm.org/citation.cfm?id=2384730
 [rdallman.me]:http://www.rdallman.me
 [speakerdeck]:https://speakerdeck.com/rdallman
 [go tutorial]:https://github.com/rdallman/gofirst
