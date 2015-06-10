@@ -4,13 +4,17 @@
 
 -------------------------------------------------------------------
 
-I'm building systems for now, but am interested in most other things.
+I'm building systems for now, but am interested in most things.
 
 ### Labor
 
 **May 2014-Present, Backend Engineer, [Iron.io]**
 
-  * TODO(reed): content here for now :)
+  *  Built a strongly consistent, distributed key-value store on top of RocksDB.
+  *  Built a distributed message queue on top of that, specifically for
+     performance and persistence for processing [delayed] jobs.
+  *  Migrated infrastructure from upstart scripts and binaries to CoreOS and Docker.
+  *  Wrote a lot of Go code. Ran a lot of Go code.
 
 **May 2013-May 2014, Undergraduate Research Assistant, Auburn University** 
 
@@ -29,15 +33,14 @@ I'm building systems for now, but am interested in most other things.
 
 ### Contributions
 
-  *  Occasionally I can be convinced to speak about things: [speakerdeck], [go tutorial]
+  *  Occasionally I can be convinced to stand in front of people: [speakerdeck]
+  *  I dabble in open source: [github]
 
 [B-E-T]:http://www.eng.auburn.edu/research/centers/twc/bet/directors-note.html
-[github.com/rdallman]:http://github.com/rdallman
+[github]:http://github.com/rdallman
 [godoctor]:https://github.com/godoctor/godoctor
-[grocerygod]:https://play.google.com/store/apps/details?id=com.bet.grocerygod
 [Iron.io]:https://iron.io
-[OpenRefactory/C]:http://dl.acm.org/citation.cfm?id=2384730
+[OpenRefactory]:http://www.openrefactory.org
 [rdallman.me]:http://www.rdallman.me
 [speakerdeck]:https://speakerdeck.com/rdallman
-[go tutorial]:https://github.com/rdallman/gofirst
 
