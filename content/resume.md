@@ -4,17 +4,17 @@
 
 -------------------------------------------------------------------
 
-I'm building systems for now, but am interested in most things.
+I'm currently building systems, but am interested in most things.
 
 ### Labor
 
 **May 2014-Present, Backend Engineer, [Iron.io]**
 
-  *  Built a strongly consistent, distributed key-value store on top of RocksDB.
-  *  Built a distributed message queue on top of that, specifically for
-     performance and persistence for processing [delayed] jobs.
+  *  Co-built a strongly consistent, distributed key-value store on top of RocksDB.
+  *  Co-built a distributed message queue on top of that, specifically for
+     performance + persistence for processing [delayed] jobs.
   *  Migrated infrastructure from upstart scripts and binaries to CoreOS and Docker.
-  *  Wrote a lot of Go code. Ran a lot of Go code.
+  *  Wrestled with Linux. Wrote a lot of Go code. Ran a lot of Go code.
 
 **May 2013-May 2014, Undergraduate Research Assistant, Auburn University** 
 
@@ -25,6 +25,9 @@ I'm building systems for now, but am interested in most things.
 
 **August 2012- May 2013, Lead Android Developer, Verge Pipe Media**
 
+  * Worked part time as a developer and led a small team building iOS and Android applications
+    and their backends for multiple clients.
+
 ### Education
 
 **B.S., Software Engineering, Auburn University, 2014.**
@@ -33,8 +36,9 @@ I'm building systems for now, but am interested in most things.
 
 ### Contributions
 
-  *  Occasionally I can be convinced to stand in front of people: [speakerdeck]
   *  I dabble in open source: [github]
+  *  Occasionally I can be convinced to stand in front of people: [speakerdeck]
+  *  Co-organizer of [GoSF] and [RocksDB] meetups
 
 [B-E-T]:http://www.eng.auburn.edu/research/centers/twc/bet/directors-note.html
 [github]:http://github.com/rdallman
@@ -43,4 +47,5 @@ I'm building systems for now, but am interested in most things.
 [OpenRefactory]:http://www.openrefactory.org
 [rdallman.me]:http://www.rdallman.me
 [speakerdeck]:https://speakerdeck.com/rdallman
-
+[GoSF]:http://www.meetup.com/golangsf
+[RocksDB]:http://www.meetup.com/RocksDB
