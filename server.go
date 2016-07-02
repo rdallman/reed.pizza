@@ -3,12 +3,15 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
+	"strings"
 
 	"github.com/howeyc/fsnotify"
 	"github.com/russross/blackfriday"
@@ -127,6 +130,7 @@ func serveFile(url string, filename string) {
 func main() {
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
 	http.HandleFunc("/", handleContent())
+	http.HandleFunc("/.well-known/acme-challenge/", acmeChallenge)
 	serveFile("/favicon.ico", "./favicon.ico")
 	serveFile("/sitemap.xml", "./sitemap.xml")
 	serveFile("/robots.txt", "./robots.txt")
@@ -135,5 +139,38 @@ func main() {
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 	if err != nil {
 		log.Fatal("ListenAndServe:", err)
+	}
+}
+
+func acmeChallenge(w http.ResponseWriter, r *http.Request) {
+	pt := strings.TrimPrefix(r.URL.Path, "/.well-known/acme-challenge/")
+	rk := ""
+
+	k := os.Getenv("ACME_KEY")
+	t := os.Getenv("ACME_TOKEN")
+	if k != "" && t != "" {
+		if pt == t {
+			rk = k
+		}
+	} else {
+		for i := 1; ; i++ {
+			is := strconv.Itoa(i)
+			k = os.Getenv("ACME_KEY_" + is)
+			t = os.Getenv("ACME_TOKEN_" + is)
+			if k != "" && t != "" {
+				if pt == t {
+					rk = k
+					break
+				}
+			} else {
+				break
+			}
+		}
+	}
+
+	if rk != "" {
+		fmt.Fprint(w, rk)
+	} else {
+		http.NotFound(w, r)
 	}
 }
