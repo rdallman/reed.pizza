@@ -1,0 +1,10 @@
+hash: 2e9fdc09f84f9e3a0c4fa5a907785fa448f6b40b4a3e8bf1a0629913b780e006
+updated: 2016-09-30T22:59:19.719718433-07:00
+imports:
+- name: github.com/howeyc/fsnotify
+  version: 441bbc86b167f3c1f4786afae9931403b99fdacf
+- name: github.com/russross/blackfriday
+  version: 0b647d0506a698cca42caca173e55559b12a69f2
+- name: github.com/shurcooL/sanitized_anchor_name
+  version: 1dba4b3954bc059efc3991ec364f9f9a35f597d2
+testImports: []

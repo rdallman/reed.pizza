@@ -1,0 +1,6 @@
+package: github.com/rdallman/worldwidereed
+import:
+- package: github.com/howeyc/fsnotify
+  version: ^0.9.0
+- package: github.com/russross/blackfriday
+  version: ^1.4.0
