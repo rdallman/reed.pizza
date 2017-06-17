@@ -4,11 +4,19 @@
 
 -------------------------------------------------------------------
 
-I'm currently building systems, but am interested in most things.
+I'm currently building [usually distributed] systems, but am interested in most
+things.
 
 ### Labor
 
-**May 2014-Present, Backend Engineer, [Iron.io]**
+**May 2017-present, Principal Member of Technical Staff, Oracle**
+
+  *  Member of the ODX (Oracle Developer Experience) group building cloud
+     infrastructure applications on Oracle's Baremetal Cloud (BMC). Working on
+     delivering an open source functions as a service (FaaS) product to be
+     hosted on BMC. More to come...
+
+**May 2014-April 2017, Senior Backend Engineer, [Iron.io]**
 
   *  Co-built a strongly consistent, distributed key-value store on top of RocksDB.
      Built distributed transactions, node membership, dynamic load balancing,
@@ -18,8 +26,8 @@ I'm currently building systems, but am interested in most things.
   *  Built authentication service on top of said distributed key-value store,
      as well (much easier than the queue).
   *  Increased cluster utilization from 40% to 80% by building a custom
-     autoscaler for job processing servers. Saved lots of $$$ and didn't have
-     to launch servers by hand anymore.
+     autoscaler for job processing servers. Saved lots of $$$ and zzz,
+     didn't have to launch servers by hand anymore.
   *  Migrated job runner from Ruby to Go. Decreased p99 task start time 100x,
      p75 by 30x by simplifying API and intelligent, probabilistic queue
      polling. Eliminated issues of jobs getting stuck in queue.
@@ -43,21 +51,23 @@ I'm currently building systems, but am interested in most things.
 
 **B.S., Software Engineering, Auburn University, 2014.**
 
-  *  Minor in Business-Engineering-Technology ([B-E-T] TL;DR entrepreneurship)
+  *  Minor in Business-Engineering-Technology ([B-E-T] TL;DR engineering entrepreneurship)
 
 ### Contributions
 
   *  I dabble in open source: [github]
+  *  Sometimes I write: [medium]
   *  Occasionally I can be convinced to stand in front of people: [speakerdeck]
   *  Co-organizer of [GoSF] and [RocksDB] meetups
 
 [It scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
-[B-E-T]:http://www.eng.auburn.edu/research/centers/twc/bet/directors-note.html
+[B-E-T]:https://eng.auburn.edu/research/centers/twc/bet-program/index.html
 [github]:http://github.com/rdallman
 [godoctor]:https://github.com/godoctor/godoctor
 [Iron.io]:https://iron.io
-[OpenRefactory]:http://www.openrefactory.org
+[OpenRefactory]:http://dl.acm.org/citation.cfm?id=2541349
 [rdallman.me]:http://www.rdallman.me
 [speakerdeck]:https://speakerdeck.com/rdallman
 [GoSF]:http://www.meetup.com/golangsf
 [RocksDB]:http://www.meetup.com/RocksDB
+[medium]: https://medium.com/@rdallman10
