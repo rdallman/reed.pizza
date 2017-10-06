@@ -11,10 +11,11 @@ things.
 
 **May 2017-present, Principal Member of Technical Staff, Oracle**
 
-  *  Member of the ODX (Oracle Developer Experience) group building cloud
-     infrastructure applications on Oracle's Baremetal Cloud (BMC). Working on
-     delivering an open source functions as a service (FaaS) product to be
-     hosted on BMC. More to come...
+  *  Core contributor on [fn], an open source Functions as a Service (FaaS)
+     product that leverages Docker to run any language in a FaaS fashion.
+     Primarily focused on load balancing, scalability, task execution, storage
+     and messaging.
+  *  Building out a hosted version of [fn] on Oracle's cloud.
 
 **May 2014-April 2017, Senior Backend Engineer, [Iron.io]**
 
@@ -71,3 +72,4 @@ things.
 [GoSF]:http://www.meetup.com/golangsf
 [RocksDB]:http://www.meetup.com/RocksDB
 [medium]: https://medium.com/@rdallman10
+[fn]:https://github.com/fnproject/fn
