@@ -1,1 +1,1 @@
-Sitemap: http://www.example.com/sitemap.xml
+Sitemap: https://rdallman.me/sitemap.xml

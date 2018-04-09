@@ -63,13 +63,13 @@ things.
 
 [It scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
 [B-E-T]:https://eng.auburn.edu/research/centers/twc/bet-program/index.html
-[github]:http://github.com/rdallman
+[github]:https://github.com/rdallman
 [godoctor]:https://github.com/godoctor/godoctor
 [Iron.io]:https://iron.io
-[OpenRefactory]:http://dl.acm.org/citation.cfm?id=2541349
-[rdallman.me]:http://www.rdallman.me
+[OpenRefactory]:https://dl.acm.org/citation.cfm?id=2541349
+[rdallman.me]:https://www.rdallman.me
 [speakerdeck]:https://speakerdeck.com/rdallman
-[GoSF]:http://www.meetup.com/golangsf
-[RocksDB]:http://www.meetup.com/RocksDB
+[GoSF]:https://www.meetup.com/golangsf
+[RocksDB]:https://www.meetup.com/RocksDB
 [medium]: https://medium.com/@rdallman10
 [fn]:https://github.com/fnproject/fn
