@@ -1,1 +1,1 @@
-Sitemap: https://rdallman.me/sitemap.xml
+Sitemap: https://rdallman.com/sitemap.xml

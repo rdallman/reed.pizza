@@ -1,6 +1,6 @@
 # Reed Allman
 
-<rdallman10@gmail.com> · [rdallman.me]
+<reed@rdallman.com> · [rdallman.com]
 
 -------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ things.
 [godoctor]:https://github.com/godoctor/godoctor
 [Iron.io]:https://iron.io
 [OpenRefactory]:https://dl.acm.org/citation.cfm?id=2541349
-[rdallman.me]:https://www.rdallman.me
+[rdallman.com]:https://rdallman.com
 [speakerdeck]:https://speakerdeck.com/rdallman
 [GoSF]:https://www.meetup.com/golangsf
 [RocksDB]:https://www.meetup.com/RocksDB
