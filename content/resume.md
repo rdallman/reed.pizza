@@ -4,8 +4,8 @@
 
 -------------------------------------------------------------------
 
-I'm currently building [usually distributed] systems, but am interested in most
-things.
+I'm currently building distributed compute & storage systems [as-a-Service],
+but am interested in many things.
 
 ### Labor
 
@@ -21,12 +21,12 @@ things.
 
   *  Co-built a strongly consistent, distributed key-value store on top of RocksDB.
      Built distributed transactions, node membership, dynamic load balancing,
-     automagic sharding.
+     automagic sharding, and automagic rebalancing.
   *  Co-built a distributed message queue system on top of that, specifically
      for performance + persistence for processing [delayed] jobs. [It scales]
   *  Built authentication service on top of said distributed key-value store,
      as well (much easier than the queue).
-  *  Increased cluster utilization from 40% to 80% by building a custom
+  *  Increased cluster utilization from <40% to >80% by building a custom
      autoscaler for job processing servers. Saved lots of $$$ and zzz,
      didn't have to launch servers by hand anymore.
   *  Migrated job runner from Ruby to Go. Decreased p99 task start time 100x,
@@ -50,7 +50,7 @@ things.
 
 ### Education
 
-**B.S., Software Engineering, Auburn University, 2014.**
+**Bachelor of Software Engineering, Auburn University, 2010-2014**
 
   *  Minor in Business-Engineering-Technology ([B-E-T] TL;DR engineering entrepreneurship)
 
@@ -59,7 +59,7 @@ things.
   *  I dabble in open source: [github]
   *  Sometimes I write: [medium]
   *  Occasionally I can be convinced to stand in front of people: [speakerdeck]
-  *  Co-organizer of [GoSF] and [RocksDB] meetups
+  *  Former co-organizer of [GoSF] and [RocksDB] meetups
 
 [It scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
 [B-E-T]:https://eng.auburn.edu/research/centers/twc/bet-program/index.html
