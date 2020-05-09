@@ -5,11 +5,18 @@
 -------------------------------------------------------------------
 
 I'm currently building distributed compute & storage systems [as-a-Service],
-but am interested in many things.
+but am interested in many things. I try to make systems that are fast, easy to
+understand and obviously correct, and sometimes it even happens.
 
 ### Labor
 
-**May 2017-present, Principal Member of Technical Staff, Oracle**
+**Dec 2019-Current, Self Employed**
+
+  *  Available on a contract basis for cloud, security, dist systems, or
+     static analysis work
+  *  COVID-19 survivor (so far)
+
+**May 2017-Dec 2019, Principal Member of Technical Staff, Oracle**
 
   *  Core contributor on [Fn], an open source Functions as a Service (FaaS)
      product that leverages Docker to run any container in a FaaS fashion.
@@ -85,6 +92,17 @@ but am interested in many things.
   *  Sometimes I write: [medium]
   *  Occasionally I can be convinced to stand in front of people: [speakerdeck]
   *  Former co-organizer of [GoSF] and [RocksDB] meetups
+
+### Human Bits
+
+  * Can solve 3x3 Rubik's cube in 15s
+  * Can stand on my head for a minute
+  * Can send certain boulders on certain days
+  * Can do Sunday NYT crossword some weeks
+  * Can make a mean Aglio e Olio
+  * Can win fantasy baseball or football leagues
+  * Can travel to a 'stan and make it back alive
+  * Cannot figure out whether the top keeps spinning at the end of Inception
 
 [It scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
 [B-E-T]:https://eng.auburn.edu/research/centers/twc/bet-program/index.html
