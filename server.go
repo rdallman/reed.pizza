@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 
 	"github.com/howeyc/fsnotify"
-	"github.com/russross/blackfriday"
+	"github.com/russross/blackfriday/v2"
 )
 
 type Page struct {
@@ -20,7 +20,7 @@ type Page struct {
 }
 
 func Markdown(s string) template.HTML {
-	return template.HTML(blackfriday.MarkdownCommon([]byte(s)))
+	return template.HTML(blackfriday.Run([]byte(s)))
 }
 
 var funcs = template.FuncMap{"md": Markdown}
@@ -82,7 +82,7 @@ func renderJSON(page string) template.HTML {
 //TODO return err
 func renderMarkdown(page string) template.HTML {
 	md, _ := ioutil.ReadFile(page)
-	return template.HTML(blackfriday.MarkdownCommon(md))
+	return template.HTML(blackfriday.Run(md))
 }
 
 //reload templates on modify
