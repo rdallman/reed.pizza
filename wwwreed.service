@@ -1,0 +1,27 @@
+[Unit]
+Description=wwwreed
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=wwwreed
+Restart=on-abort
+ExecStartPre=-/usr/bin/docker kill wwwreed
+ExecStartPre=-/usr/bin/docker rm wwwreed
+ExecStart=/usr/bin/bash -c '/usr/bin/docker run \
+  --user 42:42 \
+  --network wwwreed \
+  --cap-drop ALL \
+  --cap-add NET_BIND_SERVICE \
+  --security-opt no-new-privileges \
+  --read-only \
+  --pids-limit 100 \
+  --ulimit nofile=2048:2048 \
+  --memory 128m \
+  --memory-swap 128m \
+  --cpus .5 \
+  --name wwwreed \
+  -p 80:80 \
+  -p 443:443 \
+  wwwreed'
+ExecStop=/usr/bin/docker stop wwwreed
