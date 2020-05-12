@@ -5,7 +5,11 @@
 -------------------------------------------------------------------
 
 I'm currently building distributed compute & storage systems [as-a-Service],
-but am interested in many things. I try to make systems that are fast, easy to
+but am interested in many things.  I have lots of experience with building
+message queueing systems, building job processing systems, coding, configuring
+and operating docker, Golang and AWS at scale, stewarding open source projects
+that have live production environments, and working in mixed remote teams
+spread around the globe.  I try to build systems that are fast, easy to
 understand and obviously correct, and sometimes it even happens.
 
 ### Labor
@@ -52,9 +56,11 @@ understand and obviously correct, and sometimes it even happens.
 
   *  Co-built a strongly consistent, distributed key-value store on top of RocksDB.
      Built distributed transactions, node membership, dynamic load balancing,
-     automagic sharding, and automagic rebalancing.
-  *  Co-built a distributed message queue system on top of that, specifically
-     for performance + persistence for processing [delayed] jobs. [It scales]
+     automagic sharding, and automagic rebalancing. Based on [Viewstamped
+     Replication], [Gossip protocol], and [Two-phase commit], among others.
+  *  Co-built IronMQ v3, a distributed message queue system on top of that,
+     specifically for performance + persistence for processing [delayed] jobs,
+     [it scales].  Processed tens of billions of messages per month.
   *  Built authentication service on top of said distributed key-value store,
      as well (much easier than the queue).
   *  Increased cluster utilization from <40% to >80% by building a custom
@@ -104,7 +110,10 @@ understand and obviously correct, and sometimes it even happens.
   * Can travel to a 'stan and make it back alive
   * Cannot figure out whether the top keeps spinning at the end of Inception
 
-[It scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
+[Viewstamped Replication]:http://pmg.csail.mit.edu/papers/vr-revisited.pdf
+[Gossip protocol]:https://www.cs.cornell.edu/home/rvr/papers/GossipFD.pdf
+[Two-phase commit]:https://en.wikipedia.org/wiki/Two-phase_commit_protocol
+[it scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
 [B-E-T]:https://eng.auburn.edu/research/centers/twc/bet-program/index.html
 [github]:https://github.com/rdallman
 [godoctor]:https://github.com/godoctor/godoctor
