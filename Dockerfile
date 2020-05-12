@@ -7,5 +7,5 @@ RUN cd $D && go build -o wwwreed
 FROM alpine:3.11
 WORKDIR /app
 COPY --from=build-env /go/src/github.com/rdallman/worldwidereed /app/
-CMD ["./wwwreed"]
+ENTRYPOINT ["/app/wwwreed"]
 EXPOSE 80 443
