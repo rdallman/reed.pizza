@@ -6,4 +6,5 @@ require (
 	github.com/howeyc/fsnotify v0.9.0
 	github.com/russross/blackfriday/v2 v2.0.1
 	github.com/shurcooL/sanitized_anchor_name v0.0.0-20160918041101-1dba4b3954bc // indirect
+	golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37
 )

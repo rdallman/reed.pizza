@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"flag"
 	"html/template"
 	"io/ioutil"
@@ -9,9 +10,11 @@ import (
 	"net/http"
 	"path/filepath"
 	"strconv"
+	"sync"
 
 	"github.com/howeyc/fsnotify"
 	"github.com/russross/blackfriday/v2"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 // TODO: 404 page
@@ -124,6 +127,42 @@ func serveFile(url string, filename string) {
 	})
 }
 
+// certCache just stores certs in memory, since we prob won't restart this weekly?
+type certCache struct {
+	sync.RWMutex
+
+	m map[string][]byte
+}
+
+// Get returns a certificate data for the specified key.
+// If there's no such key, Get returns ErrCacheMiss.
+func (c *certCache) Get(ctx context.Context, key string) ([]byte, error) {
+	c.RLock()
+	v, ok := c.m[key]
+	c.RUnlock()
+	if !ok {
+		return nil, autocert.ErrCacheMiss
+	}
+	return v, nil
+}
+
+// Put stores the data in the cache under the specified key.
+// Underlying implementations may use any data storage format,
+// as long as the reverse operation, Get, results in the original data.
+func (c *certCache) Put(ctx context.Context, key string, data []byte) error {
+	c.Lock()
+	c.m[key] = data
+	c.Unlock()
+	return nil
+}
+
+// Delete removes a certificate data from the cache under the specified key.
+// If there's no such key in the cache, Delete returns nil.
+func (c *certCache) Delete(ctx context.Context, key string) error {
+	delete(c.m, key)
+	return nil
+}
+
 func main() {
 	var port int
 	var prod bool
@@ -144,21 +183,30 @@ func main() {
 		go listenForChanges()
 
 		// TODO return / listen and serve
-	} else {
-
-		log.Println("running in prod mode")
-
-		// static functions, for memory/speed
-		http.HandleFunc("/", handleIndex)
-		http.HandleFunc("/hire/resume", handleResume)
-
-		// TODO autocert
-
+		err := http.ListenAndServe(":"+strconv.Itoa(port), nil)
+		if err != nil {
+			log.Fatal("ListenAndServe:", err)
+		}
+		return
 	}
 
-	err := http.ListenAndServe(":"+strconv.Itoa(port), nil)
+	log.Println("running in prod mode")
+
+	// static functions, for memory/speed
+	http.HandleFunc("/", handleIndex)
+	http.HandleFunc("/hire/resume", handleResume)
+
+	m := &autocert.Manager{
+		Cache:      new(certCache),
+		Prompt:     autocert.AcceptTOS,
+		HostPolicy: autocert.HostWhitelist("rdallman.com", "www.rdallman.com"),
+	}
+	s := &http.Server{
+		Addr:      ":https",
+		TLSConfig: m.TLSConfig(),
+	}
+	err := s.ListenAndServeTLS("", "")
 	if err != nil {
-		log.Fatal("ListenAndServe:", err)
+		log.Fatal("ListenAndServeTLS:", err)
 	}
-
 }
