@@ -2,3 +2,4 @@ baseURL = "https://rdallman.com/"
 languageCode = "en-us"
 title = "Reed Allman"
 disableKinds = ["RSS"]
+enableRobotsTXT = true
