@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reed Allman</title>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css?family=Rubik:100,200,400,500" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      
+      
+  <h1></h1>
+  <h1 id="reed-allman">Reed Allman</h1>
+<p><a href="mailto:reed@rdallman.com">reed@rdallman.com</a> · <a href="https://rdallman.com">rdallman.com</a></p>
+<hr>
+<p>I&rsquo;m currently building distributed compute &amp; storage systems [as-a-Service],
+but am interested in many things.  I have lots of experience with building
+message queueing systems, building job processing systems, coding, configuring
+and operating docker, Golang and AWS at scale, stewarding open source projects
+that have live production environments, and working in mixed remote teams
+spread around the globe.  I try to build systems that are fast, easy to
+understand and obviously correct, and sometimes it even happens.</p>
+<h3 id="labor">Labor</h3>
+<p><strong>Dec 2019-Current, Self Employed</strong></p>
+<ul>
+<li>Available on a contract basis for cloud, security, dist systems, or
+static analysis work</li>
+<li>COVID-19 survivor (so far)</li>
+</ul>
+<p><strong>May 2017-Dec 2019, Principal Member of Technical Staff, Oracle</strong></p>
+<ul>
+<li>Core contributor on <a href="https://github.com/fnproject/fn">Fn</a>, an open source Functions as a Service (FaaS)
+product that leverages Docker to run any container in a FaaS fashion.
+Primarily focused on load balancing, scalability, task execution, storage
+and messaging.</li>
+<li>Involved in building out a hosted version of <a href="https://github.com/fnproject/fn">Fn</a> on Oracle&rsquo;s cloud.</li>
+<li>Re-architected task running agent in order to reduce start latencies,
+making it possible for tasks to wait on existing containers of a function
+kind to become available to run while a new container may be spawned,
+where previously most of those tasks would time out. This also brought
+down the number of containers launched during spikes by a painfully
+large, unknown factor (early days!).</li>
+<li>Led API 2.0 redesign effort, after spending many months working with our
+v1 API we discovered it was unintuitive when adding hooks into various
+services to trigger tasks: an API gateway, an s3-like store, etc. This
+led to an effort to rework our API to allow functions to be their own
+entity, and to have a one-to-many relationship with triggers (as is
+industry-standard for FaaS).</li>
+<li>Led effort to separate API nodes from task running nodes. We needed a way
+to separate these in order to put task running nodes in a separate network
+from API nodes, where API nodes are a touch point for users to deploy and
+manage functions on, but task running nodes operate on a separate network.</li>
+<li>Led effort to instrument all code with <a href="https://opencensus.io">OpenCensus</a>, a distributed
+tracing and statistics library with plugs for many backends. Used these
+to reduce latency in our critical path more than once; reduced
+allocations, removed docker logging, batched writes, among others.</li>
+<li>Presented talks at Devoxx, GoSF, and various meetups about Fn. Wrote a
+number of blog posts for <a href="https://medium.com/fnproject">Fn medium</a>. Helped users debug their computers
+in Slack. Reviewed a zillion Pull Requests. Wore a T-shirt bearing the
+Fn logo once a week around SF to fulfill Peter Thiel&rsquo;s prophecy.</li>
+</ul>
+<p><strong>May 2014-April 2017, Senior Backend Engineer, <a href="https://iron.io">Iron.io</a></strong></p>
+<ul>
+<li>Co-built a strongly consistent, distributed key-value store on top of RocksDB.
+Built distributed transactions, node membership, dynamic load balancing,
+automagic sharding, and automagic rebalancing. Based on <a href="http://pmg.csail.mit.edu/papers/vr-revisited.pdf">Viewstamped
+Replication</a>, <a href="https://www.cs.cornell.edu/home/rvr/papers/GossipFD.pdf">Gossip protocol</a>, and <a href="https://en.wikipedia.org/wiki/Two-phase_commit_protocol">Two-phase commit</a>, among others.</li>
+<li>Co-built IronMQ v3, a distributed message queue system on top of that,
+specifically for performance + persistence for processing [delayed] jobs,
+<a href="https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/">it scales</a>.  Processed tens of billions of messages per month.</li>
+<li>Built authentication service on top of said distributed key-value store,
+as well (much easier than the queue).</li>
+<li>Increased cluster utilization from &lt;40% to &gt;80% by building a custom
+autoscaler for job processing servers. Saved lots of $$$ and zzz,
+didn&rsquo;t have to launch servers by hand anymore.</li>
+<li>Migrated job runner from Ruby to Go. Decreased p99 task start time 100x,
+p75 by 30x by simplifying API and intelligent, probabilistic queue
+polling. Eliminated issues of jobs getting stuck in queue.</li>
+<li>Migrated infrastructure from upstart scripts and binaries to CoreOS,
+systemd and Docker. Setup push button releases for all products.</li>
+<li>Wrestled with Linux. Battled Docker. Wrote a lot of Go code. Ran a lot of
+Go code. Contributed to RocksDB, CoreOS. Presented talks at meetups and
+conferences about IronMQ. Wrote blog posts.</li>
+</ul>
+<p><strong>May 2013-May 2014, Undergraduate Research Assistant, Auburn University</strong></p>
+<ul>
+<li>Built refactoring tools. Funded by Google to work on refactoring Go. C:
+<a href="https://dl.acm.org/citation.cfm?id=2541349">OpenRefactory</a> Go: <a href="https://github.com/godoctor/godoctor">godoctor</a></li>
+<li>Built a statement level control flow graph for Go source code and used
+that to do data flow analyses.</li>
+<li>Constructed a pretty awesome testing infrastructure to test our tool on
+all the Go source I could find (4.5M lines).</li>
+<li>Developed the CLI, Sublime Text plugin, Vim plugin and JSON protocol for
+C and Go refactoring tools.</li>
+</ul>
+<h3 id="education">Education</h3>
+<p><strong>Bachelor of Software Engineering, Auburn University, 2010-2014</strong></p>
+<ul>
+<li>Minor in Business-Engineering-Technology (<a href="https://eng.auburn.edu/research/centers/twc/bet-program/index.html">B-E-T</a> TL;DR engineering entrepreneurship)</li>
+</ul>
+<h3 id="contributions">Contributions</h3>
+<ul>
+<li>I dabble in open source: <a href="https://github.com/rdallman">github</a></li>
+<li>Sometimes I write: <a href="https://medium.com/@rdallman10">medium</a></li>
+<li>Occasionally I can be convinced to stand in front of people: <a href="https://speakerdeck.com/rdallman">speakerdeck</a></li>
+<li>Former co-organizer of <a href="https://www.meetup.com/golangsf">GoSF</a> and <a href="https://www.meetup.com/RocksDB">RocksDB</a> meetups</li>
+</ul>
+<h3 id="human-bits">Human Bits</h3>
+<ul>
+<li>Can solve 3x3 Rubik&rsquo;s cube in 15s</li>
+<li>Can stand on my head for a minute</li>
+<li>Can send certain boulders on certain days</li>
+<li>Can do Sunday NYT crossword some weeks</li>
+<li>Can make a mean Aglio e Olio</li>
+<li>Can win fantasy baseball or football leagues</li>
+<li>Can travel to a &lsquo;stan and make it back alive</li>
+<li>Cannot figure out whether the top keeps spinning at the end of Inception</li>
+</ul>
+
+
+    </div>
+  </body>
+</html>
