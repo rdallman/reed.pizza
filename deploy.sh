@@ -6,6 +6,18 @@ set -e
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
+if [ ! -d public ];
+then
+	mkdir public
+	cd public
+
+	git init
+	git remote add origin "git@github.com:rdallman/rdallman.github.io"
+	git pull origin master
+	
+	cd ..
+fi
+
 # Build the project.
 hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 
