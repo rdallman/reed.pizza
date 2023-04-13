@@ -1,24 +1,25 @@
 # Reed Allman
 
-<reed@rdallman.com> · [rdallman.com]
+<hire@reed.pizza> · [reed.pizza]
 
 -------------------------------------------------------------------
 
-I'm currently building distributed compute & storage systems [as-a-Service],
-but am interested in many things.  I have lots of experience with building
-message queueing systems, building job processing systems, coding, configuring
-and operating docker, Golang and AWS at scale, stewarding open source projects
-that have live production environments, and working in mixed remote teams
-spread around the globe.  I try to build systems that are fast, easy to
-understand and obviously correct, and sometimes it even happens.
+
+I have lots of experience with building message queueing and job processing
+systems, coding, configuring and operating docker, Golang and AWS at scale,
+stewarding open source projects that have live production environments, and
+working in mixed remote teams spread around the globe.  I try to build systems
+that are fast, easy to understand and obviously correct, and sometimes it even
+happens.
 
 ### Labor
 
 **Dec 2019-Current, Self Employed**
 
-  *  Available on a contract basis for cloud, security, dist systems, or
-     static analysis work
+  *  Available on a contract basis for cloud, cryptocurrency, security,
+     distributed systems, and static analysis work
   *  COVID-19 survivor (so far)
+  *  Underwent intensive pizza research and development
 
 **May 2017-Dec 2019, Principal Member of Technical Staff, Oracle**
 
@@ -90,7 +91,7 @@ understand and obviously correct, and sometimes it even happens.
 
 **Bachelor of Software Engineering, Auburn University, 2010-2014**
 
-  *  Minor in Business-Engineering-Technology ([B-E-T] TL;DR engineering entrepreneurship)
+  *  Minor in Business-Engineering-Technology (engineering entrepreneurship)
 
 ### Contributions
 
@@ -105,7 +106,7 @@ understand and obviously correct, and sometimes it even happens.
   * Can stand on my head for a minute
   * Can send certain boulders on certain days
   * Can do Sunday NYT crossword some weeks
-  * Can make a mean Aglio e Olio
+  * Can make a pretty sick pizza
   * Can win fantasy baseball or football leagues
   * Can travel to a 'stan and make it back alive
   * Cannot figure out whether the top keeps spinning at the end of Inception
@@ -114,12 +115,11 @@ understand and obviously correct, and sometimes it even happens.
 [Gossip protocol]:https://www.cs.cornell.edu/home/rvr/papers/GossipFD.pdf
 [Two-phase commit]:https://en.wikipedia.org/wiki/Two-phase_commit_protocol
 [it scales]:https://www.iron.io/1m-msgsec-ironmqv3-hits-dos-commas/
-[B-E-T]:https://eng.auburn.edu/research/centers/twc/bet-program/index.html
 [github]:https://github.com/rdallman
 [godoctor]:https://github.com/godoctor/godoctor
 [Iron.io]:https://iron.io
-[OpenRefactory]:https://dl.acm.org/citation.cfm?id=2541349
-[rdallman.com]:https://rdallman.com
+[OpenRefactory]:https://www.openrefactory.com
+[reed.pizza]:https://reed.pizza
 [speakerdeck]:https://speakerdeck.com/rdallman
 [GoSF]:https://www.meetup.com/golangsf
 [RocksDB]:https://www.meetup.com/RocksDB

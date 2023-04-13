@@ -1,0 +1,60 @@
+baseURL: https://reed.pizza
+languageCode: en-us
+title: Reed Allman
+description: Making it easy for you to stalk me on the internet since 2014
+theme: PaperMod
+
+enableRobotsTXT: true
+
+menu:
+    main:
+        - name: Blog
+          url: posts
+          weight: 10
+
+params:
+    defaultTheme: dark
+    disableThemeToggle: true
+
+    ShowReadingTime: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
+
+    assets:
+      # disableHLJS: true # to disable highlight.js
+      # disableFingerprinting: true
+      favicon: "/favicon.ico"
+      favicon16x16: "/favicon-16x16.png"
+      favicon32x32: "/favicon-32x32.png"
+      apple_touch_icon: "/apple-touch-icon.png"
+      # safari_pinned_tab: "<link / abs url>"
+
+    label:
+      text: "Reed Allman"
+      icon: /apple-touch-icon.png
+      iconHeight: 25
+
+    profileMode:
+        enabled: true
+        title: "Hi, I'm Reed"
+        subtitle: "I make computers do things"
+        imageUrl: "/profile.jpg"
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
+
+
+    socialIcons: # optional
+        - name: "twitter"
+          url: "https://twitter.com/rdallman10"
+        - name: "medium"
+          url: "https://medium.com/rdallman10"
+        - name: "github"
+          url: "https://github.com/rdallman"
+        - name: "goodreads"
+          url: "https://www.goodreads.com/rdallman"
+        - name: "linkedin"
+          url: "https://www.linkedin.com/in/rdallman10"
+        - name: "cv"
+          url: "/cv"
+        - name: "email"
+          url: "mailto:hello@reed.pizza"
