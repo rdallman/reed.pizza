@@ -1,3 +1,7 @@
+---
+ShowReadingTime: false
+---
+
 # Reed Allman
 
 <hire@reed.pizza> · [reed.pizza]
