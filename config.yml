@@ -48,7 +48,7 @@ params:
         - name: "twitter"
           url: "https://twitter.com/rdallman10"
         - name: "medium"
-          url: "https://medium.com/rdallman10"
+          url: "https://medium.com/@rdallman10"
         - name: "github"
           url: "https://github.com/rdallman"
         - name: "goodreads"
