@@ -52,7 +52,7 @@ params:
         - name: "github"
           url: "https://github.com/rdallman"
         - name: "goodreads"
-          url: "https://www.goodreads.com/rdallman"
+          url: "https://app.thestorygraph.com/profile/rdallman"
         - name: "linkedin"
           url: "https://www.linkedin.com/in/rdallman10"
         - name: "cv"
